@@ -97,7 +97,7 @@ jobs:
         run: npm install -g npm@11.5.2
 
       - name: Publish canary release
-        run: npx lerna publish --canary --force-publish
+        run: npx lerna publish --canary --force-publish -y
         env:
           # Enable npm provenance
           NPM_CONFIG_PROVENANCE: true
