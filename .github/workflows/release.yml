@@ -57,9 +57,17 @@ jobs:
             exit 1
           fi
 
+          # Set outputs
+          echo "should_release=$SHOULD_RELEASE" >> $GITHUB_OUTPUT
+          echo "release_type=$RELEASE_TYPE" >> $GITHUB_OUTPUT
+          echo "is_canary=$([[ "$RELEASE_TYPE" == "canary" ]] && echo "true" || echo "false")" >> $GITHUB_OUTPUT
+          echo "is_stable=$([[ "$RELEASE_TYPE" == "stable" ]] && echo "true" || echo "false")" >> $GITHUB_OUTPUT
+
           echo "Validated release configuration:"
           echo "- Should release: $SHOULD_RELEASE"
           echo "- Release type: $RELEASE_TYPE"
+          echo "- Is canary: $IS_CANARY"
+          echo "- Is stable: $IS_STABLE"
 
   canary_release:
     name: Publish Canary Release
