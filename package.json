@@ -5,13 +5,9 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "https://pkg.pr.new/lerna@c03a9a5",
-    "patch-package": "^8.0.0"
+    "lerna": "https://pkg.pr.new/lerna@c03a9a5"
   },
   "volta": {
     "node": "22.19.0"
-  },
-  "scripts": {
-    "postinstall": "patch-package"
   }
 }
