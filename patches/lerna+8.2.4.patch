@@ -1,0 +1,19 @@
+diff --git a/node_modules/lerna/dist/index.js b/node_modules/lerna/dist/index.js
+index 0860a73..4be8c3e 100644
+--- a/node_modules/lerna/dist/index.js
++++ b/node_modules/lerna/dist/index.js
+@@ -6221,12 +6221,14 @@ async function npmPublish(pkg2, tarFilePath, options, conf, otpCache) {
+     if (manifestContent.publishConfig) {
+       Object.assign(opts, publishConfigToOpts(manifestContent.publishConfig));
+     }
++    console.log('PRE OIDC', { opts });
+     await oidc({
+       packageName: pkg2.name,
+       registry: opts.registry ?? "https://registry.npmjs.org/",
+       opts,
+       config: conf
+     });
++    console.log('POST OIDC', { opts });
+     result = await otplease((innerOpts) => (0, import_libnpmpublish.publish)(manifestContent, tarData, innerOpts), opts, otpCache);
+   }
+   await runLifecycle(pkg2, "publish", opts);
