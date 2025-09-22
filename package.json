@@ -6,7 +6,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "lerna": "https://pkg.pr.new/lerna@139279b"
+    "lerna": "https://pkg.pr.new/lerna@c03a9a5"
   },
   "volta": {
     "node": "22.19.0"
