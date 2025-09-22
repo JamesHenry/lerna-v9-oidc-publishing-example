@@ -100,7 +100,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Publish canary release
-        run: npx lerna publish --canary --force-publish -y --loglevel silly
+        run: npx lerna publish prerelease --force-publish -y --push=false --gitTagVersion=false
         env:
           # Enable npm provenance
           NPM_CONFIG_PROVENANCE: true
